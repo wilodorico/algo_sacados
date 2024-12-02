@@ -3,4 +3,4 @@
 - Glouton
 - Programmation dynamique
 
-## Ce projet doit sortir la liste des meilleurs actions à investir
+## L'algo doit sortir la liste des meilleurs actions à investir
