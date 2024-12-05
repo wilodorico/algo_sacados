@@ -27,8 +27,9 @@ def dynamic_programming_knapsack(actions: list[Action], budget: int):
     b = budget
     for i in range(actions_len, 0, -1):
         if dp[i][b] != dp[i - 1][b]:  # Vérification si l'action a été incluse
+            cost = int(actions[i - 1].cost)
             best_combination.append(actions[i - 1])
-            b -= int(actions[i - 1].cost)
+            b -= cost
 
     max_benefit = dp[actions_len][budget]
-    return best_combination, max_benefit
+    return best_combination, round(max_benefit, 2)
