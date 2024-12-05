@@ -38,16 +38,18 @@ def read_csv_file(file_path):
 if __name__ == "__main__":
     actions = read_csv_file("data/dataset_1.csv")
     # print(actions)
-    # best_combination, max_benefit = glouton(actions, 500)
 
-    # print(
-    #     f"Meilleure combinaison d'actions: {[(action.name, action.cost, action.benefit_monnaie) for action in best_combination]}"
-    # )
-    # print(f"Bénéfice maximum: {max_benefit} euros")
-    # print("cout total", sum([action.cost for action in best_combination]))
-    # print("Total actions:", len(best_combination))
+    # Teste sur la méthode glouton
+    best_combination, max_benefit = glouton(actions, 500)
 
-    # Tester dynamic_programming_knapsack
+    print(
+        f"Meilleure combinaison d'actions: {[(action.name, action.cost, action.benefit_monnaie) for action in best_combination]}"
+    )
+    print(f"Bénéfice maximum: {max_benefit} euros")
+    print("cout total", sum([action.cost for action in best_combination]))
+    print("Total actions:", len(best_combination))
+
+    # Teste sur la méthode dynamic_programming_knapsack
     best_combination2, max_benefit2 = dynamic_programming_knapsack(actions, 500)
     print(
         f"Meilleure combinaison (dynamic_programming_knapsack): {[(action.name, action.cost, action.benefit_monnaie) for action in best_combination2]}"
