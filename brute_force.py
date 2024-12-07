@@ -17,10 +17,9 @@ def glouton(actions: list[Action], budget: int):
             budget -= action.cost
             max_benefit = max_benefit + action.benefit_monnaie
 
-    return best_combination, max_benefit
+    return best_combination, round(max_benefit, 2)
 
 
-@staticmethod
 @measure_time
 @measure_memory
 def brute_force(actions: list[Action], budget: int):
